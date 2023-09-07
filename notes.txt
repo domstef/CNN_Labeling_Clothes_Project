@@ -39,9 +39,3 @@ Shoes Model
   #Gender classifier (run-15 {'filter_size_1': 5, 'filters_number': 32, 'filter_size_2': 5, 'dense_size': 256}), accuracy 0.84168
   #Male classifier (run-9 {'filter_size_1': 3, 'filters_number': 96, 'filter_size_2': 3, 'dense_size': 256} accuracy  = 0.9112
   #Female classifier (run-6 {'filter_size_1': 3, 'filters_number': 64, 'filter_size_2': 3, 'dense_size': 512}), accuracy = 0.8972
-
-TODO
-l2 regularization 
-data augmentationS
-After training and choosing the best models, the rest was deleted an the name of the models were changed
-Final Program
