@@ -1,0 +1,47 @@
+//  taskkill /im tensorboard.exe /f
+//  del /q %TMP%\.tensorboard-info\*
+
+Main Model (Model 1) - classification model to distinguish between:
+* 'Glasses/Sunglasses'
+* 'Trousers/Jeans'
+* 'Shoes'
+--- > chosen model (Conv2D -> MaxPooling2D --> Conv2D --> Flatten -- > Dense(2))
+--->  run 1 (filter size: 3, filter number: 32}, accuracy : 0.999
+
+Glasses/Sunglasses Model (Model 2) - classification model to distinguish between:
+* Glasses
+* Sunglasses
+
+---> chosen model (Conv2D -> MaxPooling2D --> Conv2D --> MaxPooling2D --- > Flatten -- > Dense() --- > Dense(2))
+---> run-49 {'filter_size_1': 7, 'filters_number': 32, 'filter_size_2': 3, 'dense_size': 256}, accuracy - 0.968
+
+Trousers and Jeans (Model 3_1 , 3_2, 3_3) - three different architectures to classify between 
+* Male trousers
+* Female trousers
+* Male jeans
+* Female jeans
+
+--- > Model 1 (run-1 {'filter_size': 3, 'filter_number': 32}), accuracy - 0.6960
+--- > Model 2 (run-10 { 'filter_size_1': 5, 'filter_size_2': 5, 'filter_number':32}), accuracy - 0.756 
+--- > Model 3 (run-7 { 'filter_size_1': 3,  'filter_number':64, 'filter_size_2': 3, 'dense_size':256}, accuracy 0.766
+
+
+Trousers and Jeans - Type and gender 
+	1. First network predicts the gender
+	2. Network to classify male trousers and jeans
+	3. Network to classify female trousers and jeans.
+  
+  #Gender classifier (run-35 {'filter_size_1': 7, 'filters_number': 96, 'filter_size_2': 5, 'dense_size': 256}), accuracy 0.9
+  #Male classifier (run-4 {'filter_size_1': 3, 'filters_number': 32, 'filter_size_2': 5, 'dense_size': 512})  accuracy - 0.89200
+  #Female classifier (run-7 {'filter_size_1': 3, 'filters_number': 64, 'filter_size_2': 5, 'dense_size': 256} ) accuracy - 0.82400
+
+Shoes Model
+  #Gender classifier (run-15 {'filter_size_1': 5, 'filters_number': 32, 'filter_size_2': 5, 'dense_size': 256}), accuracy 0.84168
+  #Male classifier (run-9 {'filter_size_1': 3, 'filters_number': 96, 'filter_size_2': 3, 'dense_size': 256} accuracy  = 0.9112
+  #Female classifier (run-6 {'filter_size_1': 3, 'filters_number': 64, 'filter_size_2': 3, 'dense_size': 512}), accuracy = 0.8972
+
+TODO
+l2 regularization 
+data augmentationS
+After training and choosing the best models, the rest was deleted an the name of the models were changed
+Final Program
